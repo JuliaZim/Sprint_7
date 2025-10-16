@@ -36,7 +36,6 @@ class TestLoginCourier:
     )
     def test_create_courier(self, login_data):
         payload, exp_status_code, exp_text, title_case = login_data
-        print(payload)
         # Устанавливаем заголовок теста
         allure.dynamic.title(title_case)
 
