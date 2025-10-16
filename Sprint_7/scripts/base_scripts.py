@@ -57,6 +57,5 @@ def generate_new_courier_payload():
     # собираем тело запроса
     payload = {"login": login, "password": password, "firstName": first_name}
 
-
     # возвращаем список
     return  payload
