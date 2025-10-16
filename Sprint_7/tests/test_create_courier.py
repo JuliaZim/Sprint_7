@@ -1,5 +1,5 @@
 import requests
-from scripts import base_scripts
+from helpers import base_scripts
 from data import response_text
 from data import urls
 import pytest
