@@ -4,7 +4,7 @@ import allure
 import pytest
 
 
-class TestLoginCourier:
+class TestListOrders:
     @allure.description("Проверка апи получения списка заказов: GET /api/v1/orders")
     @allure.feature("Получения списка заказов")
     @pytest.mark.parametrize('headers',[

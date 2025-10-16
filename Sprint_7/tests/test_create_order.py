@@ -4,7 +4,7 @@ import pytest
 import allure
 from data import data
 
-class TestLoginCourier:
+class TestCreateOrder:
     @allure.description('Проверка апи создания заказа: /api/v1/orders')
     @allure.feature('Проверка созданя заказа')
     @allure.severity("High")
