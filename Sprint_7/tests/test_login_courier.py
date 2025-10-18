@@ -11,7 +11,7 @@ class TestLoginCourier:
     @pytest.mark.parametrize(
         "login_data",
         [
-            ({"login": "exist_login", "password": "123"}, 200, "", "Проверка логина с валидными данными"),
+            ({"login": "exist_login", "password": "123"}, 200, "id", "Проверка логина с валидными данными"),
             (
                 {"login": "", "password": "123"},
                 400,
@@ -41,8 +41,4 @@ class TestLoginCourier:
 
         response = requests.post(urls.login_courier_url, data=payload)
         assert response.status_code == exp_status_code
-        if response.status_code == 200:
-            value = response.json()
-            value["id"] != ""
-        else:
-            assert response.text == exp_text
+        assert exp_text in response.text
