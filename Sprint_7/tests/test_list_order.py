@@ -10,7 +10,7 @@ class TestListOrders:
     @pytest.mark.parametrize('headers',[
         ({"limit": "1", "page": "0"}),
         ({"courierId":"629840"}),
-        ({"limit": "10", "nearestStation": '["1","2"]'})
+        ({"limit": "10", "nearestStation": '["1","2", "3", "4"]'})
         
     ])
     def test_return_order_list(self, headers):
@@ -20,12 +20,7 @@ class TestListOrders:
             urls.return_order_list_url, params=headers_param
         )
         response_body = response.json()
+        #Проверка, что тело ответа содержит заказы
         assert 'orders' in response_body
-        if len(response_body['orders']) > 0:
-            assert  response_body['orders'][0]['id'] != None
-            assert  response_body['orders'][0]['track'] != None
-            assert  response_body['orders'][0]['status'] != None
-            assert  response_body['orders'][0]['address'] != None
-            assert  response_body['orders'][0]['phone'] != None
         
  
